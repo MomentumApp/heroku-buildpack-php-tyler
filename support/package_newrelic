@@ -26,8 +26,8 @@ sed -i 's|var|app/local/var|g' $installdir/etc/newrelic.cfg
 sed -i 's|#ssl=false|ssl=true|g' $installdir/etc/newrelic.cfg
 curl -L "https://raw.github.com/gist/2767604/newrelic-license.sh" -o $installdir/bin/newrelic-license
 chmod +x $installdir/bin/newrelic-license
-curl -L "https://raw.github.com/gist/a9e2e0e1234d4767243d/abef9772de49d3f149fe2a3f8148690f8b7c654a/newrelic-appname.sh" -o $installdir/bin/newrelic-license
-chmod +x $installdir/bin/newrelic-license
+curl -L "https://raw.github.com/gist/a9e2e0e1234d4767243d/abef9772de49d3f149fe2a3f8148690f8b7c654a/newrelic-appname.sh" -o $installdir/bin/newrelic-appname
+chmod +x $installdir/bin/newrelic-appname
 popd
 
 pushd $installdir
