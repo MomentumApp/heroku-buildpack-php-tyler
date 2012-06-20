@@ -12,7 +12,11 @@ http {
   sendfile            on;
   keepalive_timeout   65;
   gzip                on;
-  access_log          off;
+  log_format main '"$http_x_forwarded_for" - "$remote_addr" - [$time_local] '
+                '"$http_host" "$request" $status $body_bytes_sent "$http_referer" '
+                '"$http_user_agent"';
+  access_log /app/vendor/nginx/logs/access.log main;
+  error_log /app/vendor/nginx/logs/error.log info;
   proxy_max_temp_file_size	0;
   #fastcgi_max_temp_file_size	0;
   limit_conn_zone $binary_remote_addr zone=phplimit:1m; # define a limit bucket for PHP-FPM
