@@ -1,2 +1,2 @@
 #!/bin/bash
-curl "terramar.donate.io/@curl/5"
+curl "terramar.donate.io/@cron/5"
