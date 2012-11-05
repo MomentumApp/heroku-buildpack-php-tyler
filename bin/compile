@@ -74,6 +74,11 @@ if [ ! -d ./vendor/php ]; then
   curl --silent --max-time 60 -o ./vendor/php/lib/php/extensions/no-debug-non-zts-20100525/mongo.so --location $MONGO_URL 
 fi
 
+echo "-----> Installing newrelic"
+cd ${BUILD_DIR}
+echo "-----> Bundling newrelic daemon v${NEWRELIC_VERSION}"
+mkdir -p ./local
+curl --silent --max-time 60 --location $NEWRELIC_URL | tar xz -C ./local
 
 # Config files
 echo "-----> Copying config files"
